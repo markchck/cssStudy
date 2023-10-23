@@ -1,0 +1,25 @@
+.father{
+  display: grid;
+  grid-template-columns: 100px 200px;
+  grid-template-rows:200px 100px;
+  gap: 10px;
+}
+
+.child{
+  background-color: tomato;
+  display: flex;
+  color:white;
+  font-size: 29px;
+  justify-content: center;
+  align-items: center;
+}
+.child:nth-child(3){
+  background-color: blue;
+  grid-column-start:2;
+}
+
+.child:nth-child(1){
+  background-color: black;
+  grid-row-start: 1;
+  grid-row-end:-1;
+}
