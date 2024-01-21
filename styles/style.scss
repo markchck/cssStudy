@@ -4,24 +4,28 @@ body {
   padding: 60px;
 }
 
-%alert {
+@mixin alert($bgColor, $borderColor) {
+  background-color: $bgColor;
   margin: 10px;
   padding: 10px 20px;
   border-radius: 10px;
-  border: 1px dashed black;
+  border: 1px dashed $borderColor;
+  @content;
 }
 
 .success {
-  @extend %alert;
-  background-color: green;
-}
-
-.error {
-  @extend %alert;
-  background-color: red;
+  @include alert(green, pink) {
+    font-size: 12px;
+  }
 }
 
 .warning {
-  @extend %alert;
-  background-color: yellow;
+  @include alert(yellow, green) {
+    text-transform: uppercase;
+  }
+}
+.error {
+  @include alert(tomato, blue) {
+    text-decoration: underline;
+  }
 }
